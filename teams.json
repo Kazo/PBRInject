@@ -1,0 +1,204 @@
+{
+  "player1": [
+    {
+      "species": {
+        "id": 151,
+        "gender": null,
+        "form": 0,
+        "shiny": false
+      },
+      "item": { "id": 2 },
+      "ability": { "id": 3 },
+      "nature": { "id": 10 },
+      "moves": [
+        { "id": 5 },
+        { "id": 6 },
+        { "id": 7 },
+        { "id": 8 }
+      ],
+      "ivs": {
+        "hp": 31,
+        "atk": 31,
+        "def": 31,
+        "spa": 31,
+        "spd": 31,
+        "spe": 31
+      },
+      "evs": {
+        "hp": 4,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 252
+      }
+    },
+    {
+      "species": {
+        "id": 101,
+        "gender": "m",
+        "form": 0,
+        "shiny": false
+      },
+      "item": { "id": 2 },
+      "ability": { "id": 3 },
+      "nature": { "id": 4 },
+      "moves": [
+        { "id": 5 },
+        { "id": 6 },
+        { "id": 7 },
+        { "id": 8 }
+      ],
+      "ivs": {
+        "hp": 31,
+        "atk": 31,
+        "def": 31,
+        "spa": 31,
+        "spd": 31,
+        "spe": 31
+      },
+      "evs": {
+        "hp": 4,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 252,
+        "spe": 0
+      }
+    },
+    {
+      "species": {
+        "id": 102,
+        "gender": null,
+        "form": 0,
+        "shiny": true
+      },
+      "item": { "id": 2 },
+      "ability": { "id": 3 },
+      "nature": { "id": 4 },
+      "moves": [
+        { "id": 5 },
+        { "id": 6 },
+        { "id": 7 },
+        { "id": 8 }
+      ],
+      "ivs": {
+        "hp": 31,
+        "atk": 31,
+        "def": 31,
+        "spa": 31,
+        "spd": 31,
+        "spe": 31
+      },
+      "evs": {
+        "hp": 4,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 252,
+        "spe": 0
+      }
+    }
+  ],
+  "player2": [
+    {
+      "species": {
+        "id": 200,
+        "gender": "f",
+        "form": 0,
+        "shiny": false
+      },
+      "item": { "id": 2 },
+      "ability": { "id": 3 },
+      "nature": { "id": 4 },
+      "moves": [
+        { "id": 5 },
+        { "id": 6 },
+        { "id": 7 },
+        { "id": 8 }
+      ],
+      "ivs": {
+        "hp": 31,
+        "atk": 31,
+        "def": 31,
+        "spa": 31,
+        "spd": 31,
+        "spe": 31
+      },
+      "evs": {
+        "hp": 4,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 252,
+        "spe": 0
+      }
+    },
+    {
+      "species": {
+        "id": 201,
+        "gender": "m",
+        "form": 0,
+        "shiny": true
+      },
+      "item": { "id": 2 },
+      "ability": { "id": 3 },
+      "nature": { "id": 4 },
+      "moves": [
+        { "id": 5 },
+        { "id": 6 },
+        { "id": 7 },
+        { "id": 8 }
+      ],
+      "ivs": {
+        "hp": 31,
+        "atk": 31,
+        "def": 31,
+        "spa": 31,
+        "spd": 31,
+        "spe": 31
+      },
+      "evs": {
+        "hp": 4,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 252,
+        "spe": 0
+      }
+    },
+    {
+      "species": {
+        "id": 202,
+        "gender": null,
+        "form": 0,
+        "shiny": false
+      },
+      "item": { "id": 2 },
+      "ability": { "id": 3 },
+      "nature": { "id": 4 },
+      "moves": [
+        { "id": 5 },
+        { "id": 6 },
+        { "id": 7 },
+        { "id": 8 }
+      ],
+      "ivs": {
+        "hp": 31,
+        "atk": 31,
+        "def": 31,
+        "spa": 31,
+        "spd": 31,
+        "spe": 31
+      },
+      "evs": {
+        "hp": 4,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 252,
+        "spe": 0
+      }
+    }
+  ]
+}
