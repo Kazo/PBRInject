@@ -194,6 +194,7 @@ namespace PBRInject
         static TcpClient tcpClient = new TcpClient();
         static String host = "127.0.0.1";
         static Int32 port = 6000;
+        static String file = "teams.json";
         static Byte[] Reply;
         static UInt32 TeamPointer = 0;
         static String[] ResultArray;
@@ -216,6 +217,11 @@ namespace PBRInject
                 {
                     port = Convert.ToInt32(args[i + 1]);
                 }
+
+                if (args[i] == "-f")
+                {
+                    file = args[i + 1];
+                }
             }
 
             if (tcpClient.ConnectAsync(host, port).Wait(1000))
@@ -230,7 +236,7 @@ namespace PBRInject
                 TeamPointer = ResultValue;
                 if (TeamPointer != 0x00)
                 {
-                    JSONString = File.ReadAllText("teams.json");
+                    JSONString = File.ReadAllText(file);
                     ser = new JavaScriptSerializer();
                     player = ser.Deserialize<Player>(JSONString);
                     InjectTeam(player.player1, TeamPointer + 0x5AB74);
@@ -374,10 +380,10 @@ namespace PBRInject
                 PokemonData[0x0B] = (byte)(pokemon[i].item.id & 0xFF);
 
                 //Experience
-                PokemonData[0x10] = (byte)(ExpTable[100, Growth[pokemon[i].species.id]] >> 0x18);
-                PokemonData[0x11] = (byte)((ExpTable[100, Growth[pokemon[i].species.id]] >> 0x10) & 0xFF);
-                PokemonData[0x12] = (byte)((ExpTable[100, Growth[pokemon[i].species.id]] >> 0x08) & 0xFF);
-                PokemonData[0x13] = (byte)(ExpTable[100, Growth[pokemon[i].species.id]] & 0xFF);
+                PokemonData[0x10] = (byte)(ExpTable[50, Growth[pokemon[i].species.id]] >> 0x18);
+                PokemonData[0x11] = (byte)((ExpTable[50, Growth[pokemon[i].species.id]] >> 0x10) & 0xFF);
+                PokemonData[0x12] = (byte)((ExpTable[50, Growth[pokemon[i].species.id]] >> 0x08) & 0xFF);
+                PokemonData[0x13] = (byte)(ExpTable[50, Growth[pokemon[i].species.id]] & 0xFF);
 
                 //Ability
                 PokemonData[0x15] = pokemon[i].ability.id;
