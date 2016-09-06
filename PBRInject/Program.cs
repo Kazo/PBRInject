@@ -227,18 +227,18 @@ namespace PBRInject
 
             if (tcpClient.ConnectAsync(host, port).Wait(1000))
             {
-                UInt32 TeamPointer = 0;
-                while (TeamPointer == 0)
-                {
-                    //Pointer@0x918F4FFC
-                    TeamPointer = SendCommand("READ 32 2442088444\n", true);
-                }
+                SendCommand("PAUSE\n", false);
+
+                //Pointer@0x918F4FFC
+                UInt32 TeamPointer = SendCommand("READ 32 2442088444\n", true);
 
                 String JSONString = File.ReadAllText(file);
                 JavaScriptSerializer ser = new JavaScriptSerializer();
                 Player player = ser.Deserialize<Player>(JSONString);
                 InjectTeam(player.player1, TeamPointer + 0x5AB74);
                 InjectTeam(player.player2, TeamPointer + 0x5B94C);
+
+                SendCommand("RESUME\n", false);
             }
         }
 
@@ -248,13 +248,6 @@ namespace PBRInject
             for (int i = 0; i < size; i += 4)
             {
                 Value = SendCommand("READ 32 " + (offset + (uint)i).ToString() + "\n", true);
-
-                //If 0 try again, maybe it was an error.
-                if (Value == 0x00)
-                {
-                    Value = SendCommand("READ 32 " + (offset + (uint)i).ToString() + "\n", true);
-                }
-
                 buffer[i] = (byte)((Value >> 0x18) & 0xFF);
                 buffer[i + 1] = (byte)((Value >> 0x10) & 0xFF);
                 buffer[i + 2] = (byte)((Value >> 0x08) & 0xFF);
@@ -268,9 +261,6 @@ namespace PBRInject
             for (int i = 0; i < size; i += 4)
             {
                 Value = (uint)(buffer[i+3] + (buffer[i+2] << 0x08) + (buffer[i+1] << 0x10) + (buffer[i] << 0x18));
-                SendCommand("WRITE 32 " + (offset + i).ToString() + " " + Value.ToString() + "\n", false);
-                
-                //Just in case of an error.
                 SendCommand("WRITE 32 " + (offset + i).ToString() + " " + Value.ToString() + "\n", false);
             }
         }
